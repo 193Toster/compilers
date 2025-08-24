@@ -1,0 +1,5 @@
+declare a int;
+declare b int;
+a = 3;
+b = 5;
+print(a + b);

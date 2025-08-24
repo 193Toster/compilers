@@ -10,29 +10,29 @@
 <type> ::=	<simple type> | <array type>
 
 
-<statement> ::=	<statement><statment> | ; | assert "(" expr ")"  | 
+<statement> ::=	; | assert "(" exp ")"  | 
                 <variable declaration>  | 
-                if  "(" <expr> ")" "{"<statement>"}"  | 
-                if  "(" <expr> ")" "{"<statement>"}" else "{<statement>}"  | 
-                while  "(" <expr> ")" "{"<statement>"}"  | 
-                print "(" <expr> ")" ";"  | 
-                <lvalue> "=" <expr> ";"
+                if  "(" <exp> ")" block  | 
+                if  "(" <exp> ")" block else block  | 
+                while  "(" <exp> ")" block  | 
+                print "(" <exp> ")" ";"  | 
+                <lvalue> "=" <exp> ";"
 
+<block> ::= statement | '{' statement* '}'
+<lvalue> ::=	<identifier> | <identifier> "[" <exp> "]"
 
-<lvalue> ::=	<identifier> | <identifier> "[" <expr> "]"
-
-<expr> ::=	<expr> <binary operator> <expr>  | 
-            <expr> "[" <expr> "]"  | 
-            <expr> "." length| 
-            "!" <expr>  | 
-            "(" <expr> ")"  | <integer literal>  | 
+<exp> ::=	<exp> <op> <exp>  | 
+            <exp> "[" <exp> "]"  | 
+            <exp> "." length| 
+            "!" <exp>  | 
+            "(" <exp> ")"  | <integer literal>  | 
             <identifier>  | 
              true  | false    
 
 
-<binary operator> ::=	"&&"  |  "||"  |  "<"  |  ">"  |  "<="  |  ">="  |  "!="  |  "=="   | "+"   |  "-"   | "*"  | "/"  | "%" | "**" | 
+<op> ::=	"&&"  |  "||"  |  "<"  |  ">"  |  "<="  |  ">="  |  "!="  |  "=="   | "+"   |  "-"   | "*"  | "/"  | "%" | "**" | 
 
 
 
-В IntegralTest.py проверяется работа Обоих виcитеров на простом примере кода.
+В MannualTest.py проверяется работа Обоих виcитеров на простом примере кода.
 
